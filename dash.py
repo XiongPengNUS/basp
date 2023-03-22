@@ -67,7 +67,7 @@ def all_use_prog(sp):
         subset = data
     else:
         subset = data.loc[data[sp]]
-    use_pct = subset['Use programming'].value_counts(normalize=True) * 100
+    use_pct = subset['Use programming'].value_counts(normalize=True).sort_index() * 100
 
     # st.write(len(use_pct))
     fig = go.Figure()
