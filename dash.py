@@ -171,9 +171,9 @@ def time_wordcloud(sem):
 
 st.write('## A Study on BA Specialization')
 data_file = st.file_uploader("Upload Data",type=['xlsx'])
-if data_file:
-    data = data = pd.read_excel('survey_data.xlsx')
 
+if data_file:
+    data = pd.read_excel(data_file)
     st.write('---')
     st.write('#### General Information')
     st.write(f'The dataset provides the survey responses of {data.shape[0]} students.')
