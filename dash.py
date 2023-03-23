@@ -110,6 +110,16 @@ def time_special_ranking(sem):
 
     fig.update_layout(xaxis_title="Percentage")
     st.plotly_chart(fig, use_container_width=True)
+    
+    wordcloud = WordCloud(max_words=40, random_state=1,
+                          width=1000, height=600, 
+                          margin=20, 
+                          colormap='Wistia',
+                          background_color='black').generate(' '.join(subset['Expected title'].dropna()))
+    fig = plt.figure(figsize=(6, 3))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis('off')
+    st.pyplot(fig)
 
 def time_prog_python(prof):
 
@@ -212,7 +222,7 @@ if data_file:
         time_special(sps)
 
         st.write('---')
-        st.write('#### Trend of Specialization Ranking')
+        st.write('#### Trend of Specialization Ranking and Expected Job Titles')
         sem = st.select_slider('Semester', options=semester, value=semester[0])
         time_special_ranking(sem)
 
