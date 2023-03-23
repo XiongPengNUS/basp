@@ -177,8 +177,6 @@ def time_wordcloud(sem):
     st.pyplot(fig)
 
 
-# st.set_page_config(layout="wide")
-
 st.write('## A Study on BA Specialization')
 data_file = st.file_uploader("Upload Data",type=['xlsx'])
 
@@ -235,7 +233,7 @@ if data_file:
         st.write('---')
         time_use_prog()
 
-        st.write('---')
-        st.write(f'#### Word Cloud of Expected Job Titles')
-        sem = st.selectbox('Selected Semester for Word Cloud', data['Semester'].unique(), index=0)
-        time_wordcloud(sem)
+        # st.write('---')
+        # st.write(f'#### Word Cloud of Expected Job Titles')
+        # sem = st.selectbox('Selected Semester for Word Cloud', data['Semester'].unique(), index=0)
+        # time_wordcloud(sem)
